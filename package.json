@@ -4,7 +4,6 @@
   "private": true,
   "type": "module",
   "homepage": "https://anarckk.github.io/vue-demo/",
-
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -13,6 +12,7 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@varlet/ui": "^3.2.11",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
