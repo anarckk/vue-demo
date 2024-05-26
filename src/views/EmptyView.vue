@@ -1,14 +1,54 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from "vue";
+import { RouterView } from "vue-router";
+
+const active = ref(0);
+</script>
 
 <template>
-  <var-space :size="[10, 10]">
-    <var-button>默认按钮</var-button>
-    <var-button type="primary">主要按钮</var-button>
-    <var-button type="info">信息按钮</var-button>
-    <var-button type="success">成功按钮</var-button>
-    <var-button type="warning">警告按钮</var-button>
-    <var-button type="danger">危险按钮</var-button>
-  </var-space>
+  <div class="empty-view">
+    <div class="var-tabs-warp">
+      <var-tabs
+        class="tabs-example-vertical"
+        elevation
+        layout-direction="vertical"
+        v-model:active="active"
+      >
+        <var-tab>default</var-tab>
+        <var-tab>选项2</var-tab>
+        <var-tab>选项3</var-tab>
+        <var-tab>选项3</var-tab>
+        <var-tab>选项3</var-tab>
+      </var-tabs>
+    </div>
+
+    <div class="card-wrap">
+      <div class="card var-elevation--4">
+        <RouterView />
+      </div>
+    </div>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.empty-view {
+  display: block;
+  height: 100%;
+}
+.var-tabs-warp {
+  width: 160px;
+  height: 100%;
+  position: fixed;
+}
+.tabs-example-vertical {
+  height: 240px;
+}
+.card-wrap {
+  padding: 20px;
+  margin-left: 160px;
+  min-height: 100%;
+}
+.card {
+  overflow: hidden;
+}
+</style>

@@ -31,7 +31,7 @@ import HelloWorld from "../components/HelloWorld.vue";
 
 <style scoped>
 .fbody {
-  min-height: 100vh;
+  min-height: calc(100vh - 40px);
 }
 
 @media (min-width: 1024px) {
@@ -57,7 +57,7 @@ import HelloWorld from "../components/HelloWorld.vue";
 
 header {
   line-height: 1.5;
-  max-height: 100vh;
+  max-height: 100%;
 }
 
 .logo {

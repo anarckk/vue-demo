@@ -10,21 +10,23 @@ const router = createRouter({
       path: "/",
       name: "empty",
       component: EmptyView,
-    },
-    {
-      path: "/default",
-      name: "default",
-      component: DefaultView,
       children: [
         {
-          path: "",
-          name: "home",
-          component: HomeView,
-        },
-        {
-          path: "about",
-          name: "about",
-          component: () => import("../views/AboutView.vue"),
+          path: "default",
+          name: "default",
+          component: DefaultView,
+          children: [
+            {
+              path: "",
+              name: "home",
+              component: HomeView,
+            },
+            {
+              path: "about",
+              name: "about",
+              component: () => import("../views/AboutView.vue"),
+            },
+          ],
         },
       ],
     },
