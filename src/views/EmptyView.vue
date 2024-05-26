@@ -14,7 +14,7 @@ const active = ref(0);
         layout-direction="vertical"
         v-model:active="active"
       >
-        <var-tab>default</var-tab>
+        <var-tab>default{{ active }}</var-tab>
         <var-tab>选项2</var-tab>
         <var-tab>选项3</var-tab>
         <var-tab>选项3</var-tab>
@@ -50,5 +50,6 @@ const active = ref(0);
 }
 .card {
   overflow: hidden;
+  min-height: 100px;
 }
 </style>
