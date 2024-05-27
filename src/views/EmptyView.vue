@@ -1,8 +1,17 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { RouterView } from "vue-router";
+import { useRouter } from 'vue-router';
+
+const tabsArr = ref(['/default', '/test']);
 
 const active = ref(0);
+const router = useRouter()
+console.log('router',router.currentRoute.value);
+
+function _change () {
+  console.log('fuck', active.value);
+}
 </script>
 
 <template>
@@ -13,6 +22,7 @@ const active = ref(0);
         elevation
         layout-direction="vertical"
         v-model:active="active"
+        @change="_change"
       >
         <var-tab>default{{ active }}</var-tab>
         <var-tab>选项2</var-tab>
